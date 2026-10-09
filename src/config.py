@@ -45,11 +45,16 @@ OLLAMA_EMBEDDING_MODEL  = os.getenv("OLLAMA_EMBEDDING_MODEL", "nomic-embed-text"
 # ── OpenRouter ────────────────────────────────────────────────────────────
 OPENROUTER_API_KEY  = os.getenv("OPENROUTER_API_KEY", "")
 OPENROUTER_MODEL    = os.getenv("OPENROUTER_MODEL", "openai/gpt-4o-mini")
+OPENROUTER_MAX_TOKENS = int(os.getenv("OPENROUTER_MAX_TOKENS", "1024"))
+OPENROUTER_EMBEDDING_MODEL = os.getenv(
+    "OPENROUTER_EMBEDDING_MODEL", "openai/text-embedding-3-small"
+)
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 
 # ── LangSmith ─────────────────────────────────────────────────────────────
 LANGSMITH_API_KEY = os.getenv("LANGCHAIN_API_KEY", "")
 LANGSMITH_PROJECT = os.getenv("LANGCHAIN_PROJECT", "day22-lab")
+PROMPT_OWNER      = os.getenv("PROMPT_OWNER", "day22-student").strip().lower()
 
 
 def validate() -> bool:
@@ -59,16 +64,21 @@ def validate() -> bool:
     """
     missing = []
 
-    if not LANGSMITH_API_KEY:
+    def is_missing(value: str) -> bool:
+        """Treat empty values and untouched .env.example placeholders as missing."""
+        normalized = value.strip().lower()
+        return not normalized or normalized.startswith("your_")
+
+    if is_missing(LANGSMITH_API_KEY):
         missing.append("LANGCHAIN_API_KEY (LangSmith)")
 
-    if PROVIDER == "openai" and not OPENAI_API_KEY:
+    if PROVIDER == "openai" and is_missing(OPENAI_API_KEY):
         missing.append("OPENAI_API_KEY")
-    elif PROVIDER == "gemini" and not GOOGLE_API_KEY:
+    elif PROVIDER == "gemini" and is_missing(GOOGLE_API_KEY):
         missing.append("GOOGLE_API_KEY")
-    elif PROVIDER == "anthropic" and not ANTHROPIC_API_KEY:
+    elif PROVIDER == "anthropic" and is_missing(ANTHROPIC_API_KEY):
         missing.append("ANTHROPIC_API_KEY")
-    elif PROVIDER == "openrouter" and not OPENROUTER_API_KEY:
+    elif PROVIDER == "openrouter" and is_missing(OPENROUTER_API_KEY):
         missing.append("OPENROUTER_API_KEY")
     # Ollama: không cần API key
 

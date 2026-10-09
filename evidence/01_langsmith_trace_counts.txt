@@ -1,0 +1,11 @@
+LangSmith project: day22-lab
+Verified via LangSmith API on 2026-10-09 (Asia/Bangkok)
+
+Root trace counts:
+- rag-query: 50
+- ab-rag-query: 50
+- RunnableSequence: 200
+- VectorStoreRetriever: 200
+- ragas evaluation: 4
+
+The API verification confirms the required 50 Step 1 traces and 50 Step 2 traces.

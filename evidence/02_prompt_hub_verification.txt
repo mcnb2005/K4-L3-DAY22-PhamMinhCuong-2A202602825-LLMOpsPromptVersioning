@@ -1,0 +1,9 @@
+LangSmith Prompt Hub verification
+Verified via LangSmith API on 2026-10-09 (Asia/Bangkok)
+
+- pham-minh-cuong-rag-prompt-v1: OK; input variables = context, question
+- pham-minh-cuong-rag-prompt-v2: OK; input variables = context, question
+
+Prompt URLs:
+- https://smith.langchain.com/prompts/pham-minh-cuong-rag-prompt-v1/283b843a
+- https://smith.langchain.com/prompts/pham-minh-cuong-rag-prompt-v2/c4045849

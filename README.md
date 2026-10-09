@@ -10,6 +10,13 @@
 
 # Chào mừng các bạn đến với Day 22: LangSmith + Prompt Versioning
 
+## Thông tin bài nộp
+
+- Học viên: **Phạm Minh Cương**
+- MSSV: **2A202602825**
+- Prompt owner: `pham-minh-cuong`
+- Kết quả RAGAS tốt nhất: faithfulness `0.9633` (Prompt V1, đủ 50 mẫu)
+
 ## Tổng quan
 
 Trong lab này, bạn sẽ xây dựng một hệ thống hỏi đáp hoàn chỉnh tích hợp nhiều công nghệ AI hiện đại:
