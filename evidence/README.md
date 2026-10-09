@@ -15,6 +15,8 @@ Không tạo hoặc chỉnh sửa thủ công ảnh và log kết quả.
 - `02_ab_routing_log.txt`: đủ 50 câu; routing tất định V1=19 và V2=31.
 - `03_ragas_report.json`: báo cáo thật; cả V1 và V2 đều đủ 50 mẫu cho bốn metric.
 - `03_ragas_scores.txt`: bảng điểm dạng text được trích từ báo cáo hoàn chỉnh.
+- `03_ragas_scores.png`: ảnh bảng điểm được kết xuất trực tiếp từ
+  `03_ragas_report.json`; có tên học viên, MSSV và trạng thái đạt mục tiêu.
 - `04_pii_demo_log.txt`: đủ sáu ca PII; email, phone, SSN và thẻ đều được che.
 - `04_json_demo_log.txt`: đủ năm ca JSON; các lỗi sửa được và fallback đều pass.
 
@@ -30,7 +32,6 @@ Không tạo hoặc chỉnh sửa thủ công ảnh và log kết quả.
 
 - `01_langsmith_traces.png`: ảnh LangSmith có ít nhất 50 trace `rag-query`.
 - `02_prompt_hub.png`: ảnh hai prompt V1/V2 mang tên cá nhân trên Prompt Hub.
-- `03_ragas_scores.png`: ảnh bảng điểm RAGAS V1/V2.
 
 ## Phân tích V1 và V2
 
